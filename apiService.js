@@ -1,10 +1,44 @@
+let produits = [
+            { nom: "TV LED", prix: 400, cat: "Electronique" },
+            { nom: "Micro-onde", prix: 120, cat: "Electromenager" },
+            { nom: "Smartphone", prix: 800, cat: "Electronique" },
+            { nom: "Lave-linge", prix: 300, cat: "Electromenager" },
+            { nom: "Lave-bite", prix: 3000, cat: "Promotion" },
+        ];
+
 function category(produit,category){
     if (produit.cat == category){
         true
-    }else{
+    } else {
         false
     }
 }
+
+function nouveauProduit(){
+    const nom = getElementById('nom').value
+    const prix = getElementById('prix').value
+    const cat = getElementById('cat').value
+    console.log(nom, prix, cat)
+    produits.appendChild({"nom" : nom, "prix" : prix, "cat":cat })
+    updateEverything()
+}
+
+document.getElementById('nouveauProduit').addEventListener('submit', (e) => {
+    e.preventDefault(); // Empêche le rechargement de la page
+    
+    // Créez un objet FormData à partir du formulaire soumis
+    const formData = new FormData(e.currentTarget);
+    
+    // Convertissez les données en un objet JavaScript simple
+    const data = Object.fromEntries(formData);
+    
+    nom = data.nom
+    prix = data.prix
+    cat = data.cat
+    produits.appendChild({"nom" : nom, "prix" : prix, "cat":cat })
+    console.log(data)
+    updateEverything()
+});   
 
 async function updateEverything() {
     const container = document.getElementById('app');
@@ -16,13 +50,7 @@ async function updateEverything() {
 
                     
         //créer les produit/groupes
-        const produits = [
-            { nom: "TV LED", prix: 400, cat: "Electronique" },
-            { nom: "Micro-onde", prix: 120, cat: "Electromenager" },
-            { nom: "Smartphone", prix: 800, cat: "Electronique" },
-            { nom: "Lave-linge", prix: 300, cat: "Electromenager" },
-            { nom: "Lave-bite", prix: 3000, cat: "Promotion" },
-        ];
+        
         container.innerHTML = ""; // On vide
 
 

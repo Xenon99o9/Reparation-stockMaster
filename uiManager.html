@@ -18,24 +18,24 @@
         <button onclick="toggleForm()">Ajouter un produit</button>
          <div id="editForm"style="display: none; background-color: rgba(255,255,255,0.05);">
 
-            <form method="POST" enctype="multipart/form-data">
+            <form method="POST" enctype="multipart/form-data id="formulaire">
 
                 <div>
                     <label class="form-label">Nom</label>
-                    <textarea name="Nom" class="form-control" rows="4"></textarea>
+                    <textarea id="nom" class="form-control" rows="4"></textarea>
                 </div>
 
                 <div>
                     <label class="form-label">Prix</label>
-                    <textarea name="Prix" class="form-control" rows="4"></textarea>
+                    <textarea id="prix" class="form-control" rows="4"></textarea>
                 </div>
 
                 <div>
                         <label class="form-label">Category</label>
-                        <textarea name="Category" class="form-control" rows="4"></textarea>
+                        <textarea id="cat" class="form-control" rows="4"></textarea>
                 </div>
 
-                    <button onclick="save">Enregistrer</button>
+                    <button id="nouveauProduit" onclick="nouveauProduit">Enregistrer</button>
             </form>
          </div>
          <script src="apiService.js"> </script>
