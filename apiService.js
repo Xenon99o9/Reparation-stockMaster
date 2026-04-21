@@ -1,3 +1,11 @@
+function category(produit,category){
+    if (produit.cat == category){
+        true
+        }else{
+            false
+        }
+    }
+
 async function updateEverything() {
     const container = document.getElementById('app');
     // On crée des données en dur à l'intérieur de la fonction
