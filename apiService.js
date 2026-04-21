@@ -1,10 +1,10 @@
 function category(produit,category){
     if (produit.cat == category){
         true
-        }else{
-            false
-        }
+    }else{
+    false
     }
+}
 
 async function updateEverything() {
     const container = document.getElementById('app');
@@ -23,7 +23,6 @@ async function updateEverything() {
             { nom: "Lave-linge", prix: 300, cat: "Electromenager" },
         ];
         container.innerHTML = ""; // On vide
-
 
 
 
