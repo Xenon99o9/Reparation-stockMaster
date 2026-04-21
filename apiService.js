@@ -3,7 +3,7 @@ let produits = [
             { nom: "Micro-onde", prix: 120, cat: "Electromenager" },
             { nom: "Smartphone", prix: 800, cat: "Electronique" },
             { nom: "Lave-linge", prix: 300, cat: "Electromenager" },
-            { nom: "Lave-bite", prix: 3000, cat: "Promotion" },
+            { nom: "Lave-test", prix: 3000, cat: "Promotion" },
         ];
 
 function category(produit,category){
