@@ -8,37 +8,45 @@ let produits = [
 
 function category(produit,category){
     if (produit.cat == category){
-        true
+        return true;
     } else {
-        false
+        return false;
     }
 }
 
-function nouveauProduit(){
-    const nom = getElementById('nom').value
-    const prix = getElementById('prix').value
-    const cat = getElementById('cat').value
-    console.log(nom, prix, cat)
-    produits.appendChild({"nom" : nom, "prix" : prix, "cat":cat })
-    updateEverything()
-}
+function nouveauProduit() {
 
-document.getElementById('nouveauProduit').addEventListener('submit', (e) => {
-    e.preventDefault(); // Empêche le rechargement de la page
-    
-    // Créez un objet FormData à partir du formulaire soumis
-    const formData = new FormData(e.currentTarget);
-    
-    // Convertissez les données en un objet JavaScript simple
-    const data = Object.fromEntries(formData);
-    
-    nom = data.nom
-    prix = data.prix
-    cat = data.cat
-    produits.appendChild({"nom" : nom, "prix" : prix, "cat":cat })
-    console.log(data)
+    // Récupération des valeurs des champs
+    const nom = document.getElementById('nom').value;
+    const prix = document.getElementById('prix').value;
+    const cat = document.getElementById('cat').value;
+    // Validation simple
+    if (!nom || !(prix) || !cat) {
+        alert("Veuillez remplir tous les champs correctement.");
+        return;
+    }
+
+    // Création du nouvel objet produit
+    const produit = {
+        nom: nom,
+        prix: prix,
+        cat: cat
+    };
+
+    // Ajout à la liste
+    produits.push(produit);
+
+    // Réinitialiser le formulaire
+    document.getElementById('nom').value = '';
+    document.getElementById('prix').value = '';
+    document.getElementById('cat').value = '';
+
+    // Fermer le formulaire
+    toggleForm();
     updateEverything()
-});   
+}   
+
+ 
 
 async function updateEverything() {
     const container = document.getElementById('app');
@@ -46,9 +54,7 @@ async function updateEverything() {
     //d'affichage
     //désincronise
     setTimeout(() => {
-
-
-                    
+               
         //créer les produit/groupes
         
         container.innerHTML = ""; // On vide
@@ -64,7 +70,7 @@ async function updateEverything() {
             if (p.cat === "Electronique") {
                 item.style.fontWeight = "bold";
             }
-            if (p.cat === "Promotion") {
+            if (category(p,"Promotion")) {
                 item.classList.add("promo")
                 item.innerHTML = `Produit: ${p.nom} - Prix: ${p.prix}€ PROMO`;
             }
