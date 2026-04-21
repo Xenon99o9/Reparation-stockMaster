@@ -19,7 +19,7 @@
          <script>
             function afficherPromo(){
                 const container = document.getElementById('app');
-                let listeProduits = container.children
+                let listeProduits = container.children();
                 for (produit of listeProduits){
                     if (produit.cat == "PROMO"){
                         produit.classList.add("promo")
