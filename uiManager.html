@@ -15,18 +15,35 @@
         <div id="app">
             <!-- Le contenu est généré par le script -->
         </div>
+        <button onclick="toggleForm()">Ajouter un produit</button>
+         <div id="editForm"style="display: none; background-color: rgba(255,255,255,0.05);">
+
+            <form method="POST" enctype="multipart/form-data">
+
+                <div>
+                    <label class="form-label">Nom</label>
+                    <textarea name="Nom" class="form-control" rows="4"></textarea>
+                </div>
+
+                <div>
+                    <label class="form-label">Prix</label>
+                    <textarea name="Prix" class="form-control" rows="4"></textarea>
+                </div>
+
+                <div>
+                        <label class="form-label">Category</label>
+                        <textarea name="Category" class="form-control" rows="4"></textarea>
+                </div>
+
+                    <button type="submit">Enregistrer</button>
+            </form>
+         </div>
          <script src="apiService.js"> </script>
          <script>
-            function afficherPromo(){
-                const container = document.getElementById('app');
-                let listeProduits = container.children();
-                for (produit of listeProduits){
-                    console.log(listeProduits)
-                    if (produit.cat == "PROMO"){
-                        produit.classList.add("promo")
-                    }
-                }
+            function toggleForm() {
+            const form = document.getElementById("editForm");
+            form.style.display = (form.style.display === "none") ? "block" : "none";
             }
-         </script>
+        </script>
     </body>
 </html>

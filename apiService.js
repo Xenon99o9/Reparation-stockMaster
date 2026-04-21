@@ -36,6 +36,10 @@ async function updateEverything() {
             if (p.cat === "Electronique") {
                 item.style.fontWeight = "bold";
             }
+            if (p.cat === "Promotion") {
+                item.classList.add("promo")
+                item.innerHTML = `Produit: ${p.nom} - Prix: ${p.prix}€ PROMO`;
+            }
             //remplie la liste
             container.appendChild(item);
         });
