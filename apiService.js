@@ -2,7 +2,7 @@ function category(produit,category){
     if (produit.cat == category){
         true
     }else{
-    false
+        false
     }
 }
 
