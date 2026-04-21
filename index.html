@@ -1,0 +1,46 @@
+<!-- CODE DE DÉPART (À NE PAS TOUCHER, À RÉPARER) -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>StockMaster</title>
+        <style>
+        .promo {
+        color: red;
+        font-weight: bold;
+        }
+        </style>
+    </head>
+    <body>
+        <h1>Gestion de Stock <h1>
+        <div id="app">
+            <!-- Le contenu est généré par le script -->
+        </div>
+        <script>
+            async function updateEverything() {
+            const container = document.getElementById('app');
+            // On crée des données en dur à l'intérieur de la fonction
+            d'affichage
+            setTimeout(() => {
+            const produits = [
+            { nom: "TV LED", prix: 400, cat: "Electronique" },
+            { nom: "Micro-onde", prix: 120, cat: "Electromenager" },
+            { nom: "Smartphone", prix: 800, cat: "Electronique" },
+            { nom: "Lave-linge", prix: 300, cat: "Electromenager" },
+            ];
+            container.innerHTML = ""; // On vide
+            produits.forEach(p => {
+            const item = document.createElement('div');
+            item.innerHTML = `Produit: ${p.nom} - Prix: ${p.prix}€`;
+            // Logique de style mélangée au DOM
+            if (p.cat === "Electronique") {
+            item.style.fontWeight = "bold";
+            }
+            container.appendChild(item);
+            });
+            }, 1000); // on simule un appel API
+            }
+            // Lancement initial
+            updateEverything();
+        </script>
+    </body>
+</html>
