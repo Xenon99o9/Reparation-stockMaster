@@ -15,6 +15,17 @@
         <div id="app">
             <!-- Le contenu est généré par le script -->
         </div>
-         <script src="code.js"> </script> 
+         <script src="apiService.js"> </script>
+         <script>
+            function afficherPromo(){
+                const container = document.getElementById('app');
+                let listeProduits = container.children
+                for (produit of listeProduits){
+                    if (produit.cat == "PROMO"){
+                        produit.classList.add("promo")
+                    }
+                }
+            }
+         </script>
     </body>
 </html>
