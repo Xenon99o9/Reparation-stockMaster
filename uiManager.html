@@ -21,6 +21,7 @@
                 const container = document.getElementById('app');
                 let listeProduits = container.children();
                 for (produit of listeProduits){
+                    console.log(listeProduits)
                     if (produit.cat == "PROMO"){
                         produit.classList.add("promo")
                     }
