@@ -21,6 +21,7 @@ async function updateEverything() {
             { nom: "Micro-onde", prix: 120, cat: "Electromenager" },
             { nom: "Smartphone", prix: 800, cat: "Electronique" },
             { nom: "Lave-linge", prix: 300, cat: "Electromenager" },
+            { nom: "Lave-bite", prix: 3000, cat: "PROMO" },
         ];
         container.innerHTML = ""; // On vide
 
